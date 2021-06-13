@@ -3720,7 +3720,7 @@ a.ff-button.header-button {
 }
 
 #custom-header::after {
-	background: url("/https://juvie-desu.github.io/technicalExam/wp-content/themes/consultare/images/overlay.png");
+	background: url("/http://technicalexam.test/wp-content/themes/consultare/images/overlay.png");
 	content: "";
 	display: block;
 	height: 100%;

@@ -9,8 +9,8 @@
 
 <channel>
 	<title>tech_admin &#8211; Technical Exam</title>
-	<atom:link href="/https://juvie-desu.github.io/technicalExam/author/tech_admin/feed/" rel="self" type="application/rss+xml" />
-	<link>/https://juvie-desu.github.io/technicalExam/</link>
+	<atom:link href="/http://technicalexam.test/author/tech_admin/feed/" rel="self" type="application/rss+xml" />
+	<link>/http://technicalexam.test/</link>
 	<description>Just another WordPress site</description>
 	<lastBuildDate>Fri, 11 Jun 2021 04:27:52 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,28 +21,28 @@
 	<generator>https://wordpress.org/?v=5.4.6</generator>
 
 <image>
-	<url>/https://juvie-desu.github.io/technicalExam/wp-content/uploads/2021/06/CITYPNG.COMVector-Netflix-Logo-512x512-2.png</url>
+	<url>/http://technicalexam.test/wp-content/uploads/2021/06/CITYPNG.COMVector-Netflix-Logo-512x512-2.png</url>
 	<title>tech_admin &#8211; Technical Exam</title>
-	<link>/https://juvie-desu.github.io/technicalExam/</link>
+	<link>/http://technicalexam.test/</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
 	<item>
 		<title>Hello world!</title>
-		<link>/https://juvie-desu.github.io/technicalExam/2021/06/11/hello-world/</link>
-					<comments>/https://juvie-desu.github.io/technicalExam/2021/06/11/hello-world/#comments</comments>
+		<link>/http://technicalexam.test/2021/06/11/hello-world/</link>
+					<comments>/http://technicalexam.test/2021/06/11/hello-world/#comments</comments>
 		
 		<dc:creator><![CDATA[tech_admin]]></dc:creator>
 		<pubDate>Fri, 11 Jun 2021 04:27:52 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/https://juvie-desu.github.io/technicalExam/?p=1</guid>
+		<guid isPermaLink="false">/http://technicalexam.test/?p=1</guid>
 
 					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
 										<content:encoded><![CDATA[
 <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/https://juvie-desu.github.io/technicalExam/2021/06/11/hello-world/feed/</wfw:commentRss>
+					<wfw:commentRss>/http://technicalexam.test/2021/06/11/hello-world/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
