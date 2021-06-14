@@ -33,5 +33,27 @@
 	</div>
 
 	<?php wp_footer(); ?>
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <script type="text/javascript">
+
+ 	
+ 	jQuery( document ).ready(function($) {
+	 var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+         navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+	});
+
+
+ </script>
 </body>
 </html>

@@ -196,3 +196,42 @@ require get_theme_file_path( '/inc/customizer/playlist.php' );
  * Customizer additions.
  */
 require get_theme_file_path( '/inc/customizer/sticky-playlist.php' );
+
+
+// function that runs when shortcode is called
+function wpb_demo_shortcode() { 
+ 
+    $output ="";
+    $counter = 0;
+    $url = "https://itunes.apple.com/us/rss/topmovies/limit=100/json";
+    $request = wp_remote_get( $url );
+
+    if( is_wp_error( $request ) ) {
+        return false;
+    }
+
+    $body = wp_remote_retrieve_body( $request );
+
+    $data = json_decode( $body );
+
+    if( ! empty( $data ) ) {
+        
+        $output.='<div class="swiper-container mySwiper">';
+            $output.='<div class="swiper-wrapper">';
+
+            foreach( $data->feed->entry as $feed ) {
+                $output.='<div class="swiper-slide"><img width="243" height="357"  src="'.$feed->{"im:image"}[2]->label.'"></div>';
+            }
+
+            $output.='</div>';
+            $output.='<div class="swiper-button-next"></div>';
+            $output.='<div class="swiper-button-prev"></div>';
+            $output.='<div class="swiper-pagination"></div>';
+        $output.='</div>';
+    }
+
+
+    return $output;
+} 
+// register shortcode
+add_shortcode('greeting', 'wpb_demo_shortcode'); 

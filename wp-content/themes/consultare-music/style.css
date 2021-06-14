@@ -286,12 +286,12 @@ blockquote,
 
 @font-face {
   font-family: 'MyWebFont';
-  src: url('/http://technicalexam.test/wp-content/themes/consultare-music/webfont.eot'); / IE9 Compat Modes /
-  src: url('/http://technicalexam.test/wp-content/themes/consultare-music/webfont.eot#iefix') format('embedded-opentype'), / IE6-IE8 /
-       url('/http://technicalexam.test/wp-content/themes/consultare-music/webfont.woff2') format('woff2'), / Super Modern Browsers /
-       url('/http://technicalexam.test/wp-content/themes/consultare-music/webfont.woff') format('woff'), / Pretty Modern Browsers /
-       url('/http://technicalexam.test/wp-content/themes/consultare-music/webfont.ttf')  format('truetype'), / Safari, Android, iOS /
-       url('/http://technicalexam.test/wp-content/themes/consultare-music/webfont.svg#svgFontName') format('svg'); / Legacy iOS /
+  src: url('http://technicalexam.test/wp-content/themes/consultare-music/webfont.eot'); / IE9 Compat Modes /
+  src: url('http://technicalexam.test/wp-content/themes/consultare-music/webfont.eot#iefix') format('embedded-opentype'), / IE6-IE8 /
+       url('http://technicalexam.test/wp-content/themes/consultare-music/webfont.woff2') format('woff2'), / Super Modern Browsers /
+       url('http://technicalexam.test/wp-content/themes/consultare-music/webfont.woff') format('woff'), / Pretty Modern Browsers /
+       url('http://technicalexam.test/wp-content/themes/consultare-music/webfont.ttf')  format('truetype'), / Safari, Android, iOS /
+       url('http://technicalexam.test/wp-content/themes/consultare-music/webfont.svg#svgFontName') format('svg'); / Legacy iOS /
 }
 
 body #page { max-width: 100% }
@@ -301,5 +301,7 @@ body div.site-content { padding: 0 !important }
 body header#masthead { border-bottom: none !important; }
 body header#masthead div.site-header-main div.container div.right-head.pull-right { float: none; }
 body header#masthead div.site-header-main div.container div.right-head.pull-right div.head-search-cart-wrap { float: right; }
+
+body div.mySwiper  div.swiper-wrapper { display: inline-flex; }
 
 /*body div.site-content div.container { width: 100% !important; max-width: 100% !important }*/
