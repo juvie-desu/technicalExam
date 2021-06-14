@@ -323,20 +323,7 @@ function create_posttype() {
         )
     );
 
-    register_post_type( 'series',
-    // CPT Options
-        array(
-            'labels' => array(
-                'name' => __( 'Series' ),
-                'singular_name' => __( 'Series' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'series'),
-            'show_in_rest' => true,
- 
-        )
-    );
+
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );

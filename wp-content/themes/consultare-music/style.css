@@ -37,6 +37,8 @@ body div.featured-content-section.section,
 body div.site-content { padding: 0 !important; padding-top: 100px !important; }
 body div.site-content div.content-area { padding: 0 !important }
 
+body.post-type-archive article { padding: 0 !important; border:none !important; }
+
 /*Header*/
 body.page-id-44 header.entry-header { display: none; }
 body header.entry-header { display: inline-flex; } 

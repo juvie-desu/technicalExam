@@ -21,12 +21,13 @@ get_header();
 						$consultare_enable = consultare_gtm( 'consultare_header_image_visibility' );
 
 						if ( ! consultare_display_section( $consultare_enable ) ) : ?>
-						<header class="page-header">
+						<!-- <header class="page-header">
 							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="archive-description">', '</div>' );
+							//the_archive_title( '<h1 class="page-title">', '</h1>' );
+							//the_archive_description( '<div class="archive-description">', '</div>' );
 							?>
-						</header><!-- .page-header -->
+						</header> -->
+						<!-- .page-header -->
 						<?php endif; ?>
 
 						<div id="infinite-grid" class="infinite-grid">

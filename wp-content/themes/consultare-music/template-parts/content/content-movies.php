@@ -21,15 +21,15 @@
 			<header class="entry-header">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				
-				<?php
-					echo '<select id="select-film-genre">';
-					echo '<option default> Film Genre </option>';
-				  	foreach( get_data_genre() as $term ) {
-			          echo '<option value="#'.str_ireplace( array( ' ' ), '-', strtolower($term)).'"> '.$term.' </option>';
-			    	}
-					echo '</select>';
+			<?php
+				echo '<select id="select-film-genre">';
+				echo '<option default> Film Genre </option>';
+			  	foreach( get_data_genre() as $term ) {
+		          echo '<option value="#'.str_ireplace( array( ' ' ), '-', strtolower($term)).'"> '.$term.' </option>';
+		    	}
+				echo '</select>';
 
-				?>
+			?>
 			</header><!-- .entry-header -->
 
 			<?php endif; ?>
