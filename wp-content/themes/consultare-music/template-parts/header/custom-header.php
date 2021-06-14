@@ -13,7 +13,7 @@ if ( consultare_display_section( $consultare_enable ) ) : ?>
 	<div class="custom-header-content">
 		<div class="container">
 			<?php consultare_header_title(); ?>
-
+		
 			<?php get_template_part( 'template-parts/header/breadcrumb' ); ?>
 		</div> <!-- .container -->
 	</div>  <!-- .custom-header-content -->

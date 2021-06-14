@@ -194,6 +194,13 @@ function consultare_widgets_init() {
 		) + $args
 	);
 
+	register_sidebar( array(
+		'name'        => esc_html__( 'Footer 4', 'consultare' ),
+		'id'          => 'sidebar-5',
+		'description' => esc_html__( 'Add widgets here to appear in your footer.', 'consultare' ),
+		) + $args
+	);
+
 	if ( class_exists( 'WooCommerce' ) ) {
 		//Optional Primary Sidebar for Shop
 		register_sidebar( array(

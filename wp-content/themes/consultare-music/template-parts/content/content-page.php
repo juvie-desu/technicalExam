@@ -27,7 +27,7 @@
 			
 				<?php
 				the_content();
-				echo do_shortcode('[greeting]');
+				// echo do_shortcode('[greeting]');
 
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'consultare' ),

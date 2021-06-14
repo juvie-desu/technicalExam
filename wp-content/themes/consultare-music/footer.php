@@ -39,17 +39,25 @@
  	
  	jQuery( document ).ready(function($) {
 	 var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 6,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+	 	initialSlide: 2,
+	 	// centeredSlides: true,
+        slidesPerView: 8,
+        spaceBetween: 20,
+        loop: true,
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   clickable: true,
+        // },
          navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
       });
+
+	  $('[data-toggle="popover"]').popover({
+	        placement : 'top',
+	        trigger : 'hover'
+	    });
 
 	});
 

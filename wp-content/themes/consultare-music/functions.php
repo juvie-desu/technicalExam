@@ -198,11 +198,8 @@ require get_theme_file_path( '/inc/customizer/playlist.php' );
 require get_theme_file_path( '/inc/customizer/sticky-playlist.php' );
 
 
-// function that runs when shortcode is called
-function wpb_demo_shortcode() { 
- 
-    $output ="";
-    $counter = 0;
+function get_data(){
+
     $url = "https://itunes.apple.com/us/rss/topmovies/limit=100/json";
     $request = wp_remote_get( $url );
 
@@ -212,10 +209,78 @@ function wpb_demo_shortcode() {
 
     $body = wp_remote_retrieve_body( $request );
 
-    $data = json_decode( $body );
+    // $data = 
+
+    return json_decode( $body ); 
+}
+
+function get_data_genre() {
+    
+    $output ="";
+    $counter = 0;
+    $data = get_data();
 
     if( ! empty( $data ) ) {
+        foreach( $data->feed->entry as $feed ) {
+             $terms[$counter] = $feed->category->attributes->term;
+            $counter++;
+        }
+    }
+
+    return array_unique( $terms);
+} 
+
+// Get All the data from API
+function get_data_term( $term ){
+    $output ="";
+    $counter = 0;
+    $terms = array();
+    $data = get_data();
+
+    // var_dump(get_data_genre());
+
+  
+    if( ! empty( $data ) ) {
+
+        foreach( get_data_genre() as $term ) {
+           $output.='<div class="popular-section-header movie-based-on-terms " id="'.str_ireplace( array( ' ' ), '-', strtolower($term)).'"><i class="fas fa-rocket"></i> <span> '.$term.'</span><div>';
+            $output.='<div class="swiper-container mySwiper">';
+                $output.='<div class="swiper-wrapper">';
+
+                foreach( $data->feed->entry as $feed ) {
+                    if( $feed->category->attributes->term == $term ){
+                        $output.='<div class="swiper-slide"><img width="243" height="357"  src="'.$feed->{"im:image"}[2]->label.'"></div>';
+                    }
+                    $counter++;
+                }
+                $output.='</div>';
+                $output.='<div class="swiper-button-next"></div>';
+                $output.='<div class="swiper-button-prev"></div>';
+            $output.='</div><br><br>';
+        }
+
+
         
+    }
+
+    return $output;
+
+}
+// register shortcode
+add_shortcode('get_data_shortcode', 'get_data_term'); 
+
+
+
+
+// function that runs when shortcode is called
+function wpb_demo_shortcode() { 
+ 
+    $output ="";
+    $counter = 0;
+    $data = get_data();
+
+    if( ! empty( $data ) ) {
+        $output.='<div class="popular-section-header"><i class="fas fa-rocket"></i> <span> Popular in Netflix</span><div>';
         $output.='<div class="swiper-container mySwiper">';
             $output.='<div class="swiper-wrapper">';
 
@@ -226,7 +291,6 @@ function wpb_demo_shortcode() {
             $output.='</div>';
             $output.='<div class="swiper-button-next"></div>';
             $output.='<div class="swiper-button-prev"></div>';
-            $output.='<div class="swiper-pagination"></div>';
         $output.='</div>';
     }
 
@@ -235,3 +299,44 @@ function wpb_demo_shortcode() {
 } 
 // register shortcode
 add_shortcode('greeting', 'wpb_demo_shortcode'); 
+
+
+
+
+
+
+// Our custom post type function
+function create_posttype() {
+ 
+    register_post_type( 'movies',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Movies' ),
+                'singular_name' => __( 'Movie' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'movies'),
+            'show_in_rest' => true,
+ 
+        )
+    );
+
+    register_post_type( 'series',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Series' ),
+                'singular_name' => __( 'Series' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'series'),
+            'show_in_rest' => true,
+ 
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
